@@ -4,6 +4,11 @@
 
 {% block content %}
 <br>
+<form action="{% url 'restaurant-list' %}" method="GET">
+  <input class="col-10" type="text" name="q" placeholder="Search here..." value="{{request.GET.q}}">
+  <input class=" mb-5" type="submit" value="Search">
+</form>
+
 <div class="row">
     {% for restaurant in restaurants %}
     <div class="col-md-4">
